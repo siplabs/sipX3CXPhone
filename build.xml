@@ -1,0 +1,8 @@
+<project name="3CXPhone" default="default">
+
+  <property name="project.dir" value="plugins/3CXPhone" />
+  <property name="plugin.models.dir" value="etc/3CXPhone" />
+  <property name="plugin.name" value="3CX-phones" />
+
+  <import file="../plugins.build.xml" />
+</project>

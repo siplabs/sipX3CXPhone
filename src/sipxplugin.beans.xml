@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<bean id="3cxPhone" class="org.sipfoundry.sipxconfig.phone.3cx.3cxPhone" scope="prototype" parent="abstractPhone" />
+
+<bean id="3cxkModel" class="org.sipfoundry.sipxconfig.phone.3cx.3cxModel" parent="abstractPhoneModel" abstract="true">
+	<property name="beanId" value="3cxPhone" />
+	<property name="vendor" value="3CX"/>
+	<property name="restartSupported" value="true" />
+	<property name="profileTemplate" value="3CXPhone/phone.xml.vm" />
+	<property name="directoryProfileTemplate" value="3CXPhone/directory.xml.vm" />
+</bean>
+
+<bean id="yealinkPhoneSIPT12P" parent="3cxModel">
+	<property name="beanId" value="3cxPhone" />
+	<property name="label" value="3CXPhone" />
+	<property name="name" value="3CXPhone" />
+	<property name="maxLineCount" value="6" />
+</bean>
+
+</beans>
